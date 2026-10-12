@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as pyplot
-from filters import toGrayScale,adjustBrightness
+from filters import toGrayScale,adjustBrightness,adjustContrast
 
 img = pyplot.imread("./input.jpg")
 pyplot.imshow(img)
@@ -22,4 +22,9 @@ pyplot.show()
 brightimg = adjustBrightness(img, 50)
 pyplot.imshow(brightimg)
 pyplot.title("Bright image (+50)")
+pyplot.show()
+
+contrastimg = adjustContrast(img, 1.5)
+pyplot.imshow(contrastimg)
+pyplot.title("Contrast Adjusted image (x1.5)")
 pyplot.show()

@@ -14,3 +14,9 @@ def adjustBrightness(img: np.ndarray, val: int):
     newimg = floatimg + val
 
     return np.clip(newimg, 0 , 255).astype(np.uint8)
+
+def adjustContrast(img:np.ndarray, val:int):
+    floatimg = img.astype(np.float32)
+    newimg = floatimg*val
+
+    return np.clip(newimg,0,255).astype(np.uint8)
