@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as pyplot
-from filters import toGrayScale,adjustBrightness,adjustContrast
+from filters import toGrayScale,adjustBrightness,adjustContrast,flipImage
 
 img = pyplot.imread("./input.jpg")
 pyplot.imshow(img)
@@ -27,4 +27,9 @@ pyplot.show()
 contrastimg = adjustContrast(img, 1.5)
 pyplot.imshow(contrastimg)
 pyplot.title("Contrast Adjusted image (x1.5)")
+pyplot.show()
+
+flip = flipImage(img,"Vertical")
+pyplot.imshow(flip)
+pyplot.title("Vertical Flip")
 pyplot.show()

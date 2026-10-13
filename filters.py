@@ -20,3 +20,13 @@ def adjustContrast(img:np.ndarray, val:int):
     newimg = floatimg*val
 
     return np.clip(newimg,0,255).astype(np.uint8)
+
+def flipImage(img:np.ndarray,mode = "Horizondal"):
+    if mode == "Horizondal":
+        return img[:,::-1,:]
+    elif mode == "Vertical":
+        return img[::-1,:,:]
+    elif mode == "180":
+        return img[::-1,::-1,:]
+    else:
+        raise ValueError("Mode must be 'horizontal', 'vertical', or '180'")
